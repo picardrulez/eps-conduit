@@ -3,6 +3,7 @@ HTTP/HTTPS Load Balancer written in GO
 
 ##Usage
 By default, eps-conduit will bind to port 8000, but any port can be specified.
+
 ###Flags
 * -b    list of backend hosts
   * ex:  eps-conduit -b "10.2.8.1, 10.2.8.2"
