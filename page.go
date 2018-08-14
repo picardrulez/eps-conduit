@@ -11,6 +11,7 @@ func pageBuilder() string {
 	<html lang="en">
 	<head>
 	  <meta charset="UTF_8">
+	  <meta http-equiv="refresh" content="5">
 	  <title>EPS-CONDUIT</title>
 	  <link rel="stylesheet" href="resources/css/lcars.css">
 	  <style>
