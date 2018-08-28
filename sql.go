@@ -7,7 +7,7 @@ import (
 )
 
 func insertRoute(destination string) int {
-	db, err := sql.Open("sqlite3", "./epsconduit.db")
+	db, err := sql.Open("sqlite3", "./epsconduit.db?_busy_timeout=15000")
 	if err != nil {
 		log.Println("error opening db for insert")
 		log.Printf("%s", err)
