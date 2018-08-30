@@ -4,7 +4,6 @@ import (
 	"database/sql"
 	_ "github.com/mattn/go-sqlite3"
 	"log"
-	"strconv"
 	"time"
 )
 
@@ -40,17 +39,11 @@ func dbCleaner(table string) {
 			log.Println("error preparing delete statement for " + table)
 			return
 		}
-		res, err := stmt.Exec()
+		_, err = stmt.Exec()
 		if err != nil {
 			log.Println("error executing delete from " + table)
 			return
 		}
-		affected, err := res.RowsAffected()
-		if err != nil {
-			log.Println("error checking rows affected from " + table)
-			return
-		}
-		log.Println("table purge performed on " + table + ".  " + strconv.FormatInt(affected, 10) + " rows affected.")
 		time.Sleep(1 * time.Minute)
 	}
 }

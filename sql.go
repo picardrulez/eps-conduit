@@ -33,7 +33,7 @@ func insertRoute(destination string) int {
 }
 
 func selectNumLastMinute(table string) int {
-	db, err := sql.Open("sqlite3", "./epsconduit.db")
+	db, err := sql.Open("sqlite3", "./epsconduit.db?_busy_timeout=15000")
 	if err != nil {
 		log.Println("error opening db for selectNumLastMinute")
 		log.Printf("%s", err)
@@ -54,7 +54,7 @@ func selectNumLastMinute(table string) int {
 }
 
 func selectNumLastFiveMinutes(table string) int {
-	db, err := sql.Open("sqlite3", "./epsconduit.db")
+	db, err := sql.Open("sqlite3", "./epsconduit.db?_busy_timeout=15000")
 	if err != nil {
 		log.Println("error opening db for selectNumLastFiveMinutes")
 		log.Printf("%s", err)
@@ -74,7 +74,7 @@ func selectNumLastFiveMinutes(table string) int {
 }
 
 func selectNumLastFifteenMinutes(table string) int {
-	db, err := sql.Open("sqlite3", "./epsconduit.db")
+	db, err := sql.Open("sqlite3", "./epsconduit.db?_busy_timeout=15000")
 	if err != nil {
 		log.Println("error opening db for selectNumLastFifteenMinutes")
 		log.Printf("%s", err)
@@ -95,7 +95,7 @@ func selectNumLastFifteenMinutes(table string) int {
 }
 
 func selectNumLastHour(table string) int {
-	db, err := sql.Open("sqlite3", "./epsconduit.db")
+	db, err := sql.Open("sqlite3", "./epsconduit.db?_busy_timeout=15000")
 	if err != nil {
 		log.Println("error opening db for selectNumLastHour")
 		log.Printf("%s", err)
@@ -116,7 +116,7 @@ func selectNumLastHour(table string) int {
 }
 
 func insertError(destination string, connerr error) int {
-	db, err := sql.Open("sqlite3", "./epsconduit.db")
+	db, err := sql.Open("sqlite3", "./epsconduit.db?_busy_timeout=15000")
 	if err != nil {
 		log.Println("error opening db for insertError")
 		log.Printf("%s", err)
