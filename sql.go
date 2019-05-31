@@ -66,6 +66,7 @@ func selectNumLastFiveMinutes(table string) int {
 		db.Close()
 		res.Close()
 		log.Println("error querying last 5 minutes")
+		log.Println(err)
 	}
 	count := rowCounter(res)
 	db.Close()
