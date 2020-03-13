@@ -44,7 +44,7 @@ func dbCleaner(table string) {
 		log.Printf("%s", err)
 	}
 	for {
-		stmt, err := db.Prepare("DELETE from " + table + " where insertdate <= date('now', '-1 hour')")
+		stmt, err := db.Prepare("DELETE from " + table + " where insertdate <= datetime('now', '-1 hour')")
 		if err != nil {
 			log.Println("error preparing delete statement for " + table)
 			log.Println(err)
