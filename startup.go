@@ -34,7 +34,7 @@ func dbCleaner(table string) {
 	log.Println("starting db cleaner on " + table)
 	db, _ := sql.Open("sqlite3", "./epsconduit.db")
 	for {
-		stmt, err := db.Prepare("DELETE from " + table + " where insertdate <= date('now', '-1 day')")
+		stmt, err := db.Prepare("DELETE from " + table + " where insertdate <= date('now', '-1 hour')")
 		if err != nil {
 			log.Println("error preparing delete statement for " + table)
 			log.Println(err)

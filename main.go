@@ -12,7 +12,7 @@ import (
 )
 
 //Global variable of the last backend sent.  This is for round-robin load balancing
-var VERSION string = "v1.0.8"
+var VERSION string = "v1.1.0"
 var lastHost int = 0
 var logfile string = "/var/log/eps-conduit"
 
