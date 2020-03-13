@@ -4,7 +4,7 @@ import (
 	"database/sql"
 	_ "github.com/mattn/go-sqlite3"
 	"log"
-	"strconv"
+	//	"strconv"
 	"time"
 )
 
@@ -50,14 +50,14 @@ func dbCleaner(table string) {
 			log.Println(err)
 			return
 		}
-		stmtrtn, err := stmt.Exec()
+		_, err = stmt.Exec()
 		if err != nil {
 			log.Println("error executing delete from " + table)
 			log.Println(err)
 			return
 		}
-		rowsAffected, _ := stmtrtn.RowsAffected()
-		log.Println("DBCLEANER FOR TABLE " + table + " STATEMENT RETURN ROWS AFFECTED: " + strconv.FormatInt(rowsAffected, 10))
+		//rowsAffected, _ := stmtrtn.RowsAffected()
+		//log.Println("DBCLEANER FOR TABLE " + table + " STATEMENT RETURN ROWS AFFECTED: " + strconv.FormatInt(rowsAffected, 10))
 		time.Sleep(1 * time.Minute)
 	}
 }
