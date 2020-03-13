@@ -9,7 +9,7 @@ import (
 )
 
 func startup() int {
-	database, err := sql.Open("sqlite3", "./epsconduit.db")
+	database, err := sql.Open("sqlite3", "./epsconduit.db?_auto_vacuum=1")
 	if err != nil {
 		log.Println("error opening database for startup procedures")
 		log.Printf("%s", err)
